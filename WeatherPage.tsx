@@ -1,40 +1,35 @@
-import React from 'react';
-import { StyleSheet, View, Text, Image, Button } from 'react-native';
+// screens/WeatherScreen.js
 
-const WeatherPage = ({ navigation }) => (
-  <View style={styles.container}>
-    <Text style={styles.heading}>Today's Weather</Text>
-    <Image
-      style={styles.weatherImage}
-      source={require('./images/weather.png')}
-    />
-    <Text style={styles.weatherText}>Sunny</Text>
-    <Text style={styles.temperature}>Temperature: 28°C</Text>
-    <Button
-      title="Go to Forecast"
-      onPress={() => navigation.navigate('Forecast')}
-    />
-  </View>
-);
+import React from 'react';
+import { View, Text, StyleSheet, Image } from 'react-native';
+
+const WeatherScreen = () => {
+  return (
+  
+     <View style={styles.container}>
+      <Image style={styles.weatherImage} source={require('./images/sunny.png')} />
+      <Text style={styles.weatherText}>Today's Weather: Sunny</Text>
+      <Text style={styles.temperature}>Temperature: 28°C</Text>
+    </View>
+   
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#100529',
     alignItems: 'center',
-  },
-  heading: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
+    justifyContent: 'center',
   },
   weatherImage: {
     width: 200,
     height: 200,
-    marginBottom: 10,
+    marginBottom: 20,
   },
   weatherText: {
-    fontSize: 20,
+    fontSize: 24,
+    fontWeight: 'bold',
     marginBottom: 10,
   },
   temperature: {
@@ -42,4 +37,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WeatherPage;
+export default WeatherScreen;

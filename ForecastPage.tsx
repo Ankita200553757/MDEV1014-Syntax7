@@ -1,63 +1,47 @@
-import React from 'react';
-import { StyleSheet, View, Text, Image, Button } from 'react-native';
 
-const ForecastPage = ({ navigation }) => (
-  <View style={styles.container}>
-    <Text style={styles.heading}>Weather Forecast</Text>
-    <View style={styles.forecastContainer}>
-      <View style={styles.forecastItem}>
+import React from 'react';
+import { View, Text, StyleSheet, Image  } from 'react-native';
+
+const ForecastPage = () => {
+  return (
+    <View style={styles.container}>
+     
+         <View style={styles.forecastItem}>
         <Text style={styles.forecastDay}>Monday</Text>
-        <Image
-          style={styles.forecastIcon}
-          source={require('./images/sunny.png')}
-        />
+        <Image style={styles.forecastIcon} source={require('./images/sunny.png')} />
         <Text>Sunny</Text>
         <Text>28°C</Text>
       </View>
       <View style={styles.forecastItem}>
         <Text style={styles.forecastDay}>Tuesday</Text>
-        <Image
-          style={styles.forecastIcon}
-          source={require('./images/cloudy.png')}
-        />
+        <Image style={styles.forecastIcon} source={require('./images/cloudy.png')} />
         <Text>Cloudy</Text>
         <Text>24°C</Text>
       </View>
+     
     </View>
-    <Button
-      title="Go to Settings"
-      onPress={() => navigation.navigate('Settings')}
-    />
-  </View>
-);
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#100529',
     alignItems: 'center',
-  },
-  heading: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  forecastContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 10,
+    justifyContent: 'center',
   },
   forecastItem: {
     alignItems: 'center',
+    marginBottom: 20,
   },
   forecastDay: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 5,
   },
   forecastIcon: {
-    width: 50,
-    height: 50,
+    width: 250,
+    height: 250,
     marginBottom: 5,
   },
 });

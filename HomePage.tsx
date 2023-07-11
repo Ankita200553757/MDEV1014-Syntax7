@@ -1,38 +1,41 @@
-import React from 'react';
-import { StyleSheet, View, Text, Image, Button } from 'react-native';
-import WeatherPage from './WeatherPage';
 
-const HomePage = ({ navigation } ) => (
-  <View style={styles.container}>
-    <Text style={styles.heading}>Weather App</Text>
-    <Image
-      style={styles.logo}
-      source={require('./images/logo.png')}
-    />
-    <Text>Welcome to the Weather App!</Text>
-    <Button
-      title="Go to Weather"
-      onPress={() => navigation.navigate('Weather')}
-    />
-  </View>
-);
+import React from 'react';
+import { View, Text, StyleSheet, Image } from 'react-native';
+
+const HomePage = () => {
+  return (
+    <View style={styles.container}>
+        <Image style={styles.logo} source={require('./images/logo.png')} />
+      <Text style={styles.heading}>Welcome to the Weather App!</Text>
+      <Text style={styles.description}>Get the latest weather updates.</Text>  
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#100529',
     alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logo: {
+    width: 150,
+    height: 150,
+    marginBottom: 20,
   },
   heading: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
+    color:'white',
+    backgroundColor:'transparent'
   },
-  logo: {
-    width: 100,
-    height: 100,
-    marginBottom: 10,
+  description: {
+    fontSize: 16,
+    textAlign: 'center',
+    marginBottom: 20,
+    color:'white'
   },
 });
-
 export default HomePage;
